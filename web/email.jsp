@@ -27,7 +27,7 @@
         String mailTo = roster.get(i).getEmail();
         String mailFrom = "Professor@gmail.com";
         String mailSubject = "This Week's Assignment";
-        String mailText = "Here is your problem this week: " + assignments.get(array[i]);
+        String mailText = "Here is your problem this week " + assignments.get(array[i]);
 
         emailMethod.sendEmail(mailTo, mailFrom, mailSubject, mailText, mailSmtpHost);
     }

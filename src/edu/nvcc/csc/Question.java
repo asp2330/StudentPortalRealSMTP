@@ -32,8 +32,7 @@ package edu.nvcc.csc;
 
         @Override
         public String toString() {
-            return "Question Number: "
-                    + " "+ questionNumber + " | "
-                    + questionBody+".";
+            return "\n"+"Question Number: " + questionNumber +"\n\t"+ questionBody+".";
     }
     }
+

@@ -12,13 +12,15 @@
 </head>
 <body>
 <form method="post" action="questionSave.jsp">
+    <h1>Add Question To List</h1>
     Question Body <textarea rows="5" cols="50" type="text" name="questionBody"></textarea> <br/>
     <input type="submit"/>
 </form>
 
 <form method="post" action="questionSave2.jsp">
-    Question Body <textarea rows="5" cols="50" type="text" name="questionBodyChange"></textarea> <br/>
+    <h1>Change Question</h1>
     Change Question Number<input type="number" name="questionNumberChange"/><br/>
+    Question Body<textarea rows="5" cols="50" type="text" name="questionBodyChange"></textarea> <br/>
     <input type="submit"/>
 </form>
 <br><br><br>
