@@ -11,10 +11,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<%
     <title>Title</title>
-    </head>
-    <body>
+</head>
+<body>
+<%
     List<Student> roster = (List<Student>) session.getAttribute("theRoster");
     List<Question> assignments = (List<Question>) session.getAttribute("theQuestions");
     int array[] = emailMethod.RNGNoDupe(assignments.size());
