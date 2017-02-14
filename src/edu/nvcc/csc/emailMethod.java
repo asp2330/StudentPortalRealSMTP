@@ -10,7 +10,7 @@ import javax.mail.internet.MimeMessage;
 public class emailMethod {
     public static void sendEmail(String to, String from, String subject, String text, String smtpHost) {
         try {
-            final String username = "";
+            final String username = "testcompscience@gmail.com";
             final String password = "computersciencetestemail";
             Properties properties = new Properties();
             properties.put("mail.smtp.auth", "true");
