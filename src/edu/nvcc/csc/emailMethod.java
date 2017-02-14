@@ -2,10 +2,7 @@ package edu.nvcc.csc;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Random;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -13,9 +10,22 @@ import javax.mail.internet.MimeMessage;
 public class emailMethod {
     public static void sendEmail(String to, String from, String subject, String text, String smtpHost) {
         try {
+            final String username = "";
+            final String password = "computersciencetestemail";
             Properties properties = new Properties();
-            properties.put("mail.smtp.host", smtpHost);
-            Session emailSession = Session.getDefaultInstance(properties);
+            properties.put("mail.smtp.auth", "true");
+            properties.put("mail.smtp.starttls.enable", "true");
+            properties.put("mail.smtp.host", "smtp.gmail.com");
+            properties.put("mail.smtp.port", "587");
+
+
+            Session emailSession = Session.getInstance(properties,
+                    new javax.mail.Authenticator() {
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(username, password);
+                        }});
+
+
 
             Message emailMessage = new MimeMessage(emailSession);
             emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
